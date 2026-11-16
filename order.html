@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Form | Lil' n bites</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Lil' n bites</a>
+            <nav class="nav" id="nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Menu &amp; Prices</a>
+                <a href="order.html" class="active">Order</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+        </div>
+    </header>
+
+    <section class="page-header page-header-order">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1>Place Your Order</h1>
+            <p>Mix individual items and bundles in one order.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container order-layout">
+            <div class="order-form-wrap">
+                <h2 class="order-form-title">&#127850; Build Your Order</h2>
+
+                <div class="add-item-panel">
+                    <h3 class="add-item-title">&#43; Add Item</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category">
+                                <option value="">Select category</option>
+                                <option value="Individual">Individual</option>
+                                <option value="Boxes &amp; Bundles">Boxes &amp; Bundles</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Product / Treat</label>
+                            <select id="product">
+                                <option value="">Select category first</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row add-item-row">
+                        <div class="form-group">
+                            <label for="itemQty">Quantity</label>
+                            <input type="number" id="itemQty" min="1" value="1" />
+                        </div>
+                        <div class="form-group">
+                            <label for="itemPrice">Unit Price</label>
+                            <input type="text" id="itemPrice" readonly />
+                        </div>
+                        <div class="form-group add-btn-group">
+                            <label>&nbsp;</label>
+                            <button type="button" id="addItemBtn" class="btn btn-add-item">&#43; Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-section">
+                    <h3 class="cart-title">&#128221; Your Order</h3>
+                    <div id="cartItems" class="cart-items">
+                        <p class="cart-empty">No items yet. Add products above.</p>
+                    </div>
+                    <div id="cartTotal" class="cart-total"></div>
+                </div>
+
+                <hr class="order-divider" />
+
+                <h3 class="customer-info-title">&#128100; Customer Information</h3>
+                <form id="orderForm" class="order-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="custName">Your Name</label>
+                            <input type="text" id="custName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="custEmail">Gmail Address</label>
+                            <input type="email" id="custEmail" placeholder="you@gmail.com" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="remarks">Details / Remarks</label>
+                        <textarea id="remarks" rows="3" placeholder="Pickup date, special requests, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-order">&#127873; Place Order</button>
+                </form>
+                <div id="orderStatus" class="order-status"></div>
+            </div>
+
+            <div class="order-info">
+                <h3>&#128221; Order Summary</h3>
+                <div id="orderSummary" class="order-summary-box">
+                    <p class="summary-placeholder">Add items to see the summary.</p>
+                </div>
+                <div class="order-info-note">
+                    <p>&#128231; A receipt will be sent to your Gmail after placing the order.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; 2025 Lil' n bites. All rights reserved.</p>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Menu &amp; Prices</a>
+                <a href="order.html">Order</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
